@@ -26,6 +26,7 @@ module.exports = {
     /*
     ** Run ESLint on save
     */
+    vendor: ['axios'],
     extend(config, ctx) {
       if (ctx.dev && ctx.isClient) {
         config.module.rules.push({
@@ -36,5 +37,7 @@ module.exports = {
         })
       }
     }
-  }
+  },
+
+  plugins: ['~/plugins/filters']
 }
