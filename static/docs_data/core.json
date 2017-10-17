@@ -15,7 +15,8 @@
         "isGeneric":true,
         "genericType":"Core",
         "link":"core"
-      }
+      },
+      "isDictionary":false
     }
   ],
   "implements":[
@@ -33,7 +34,8 @@
           "isGeneric":false,
           "genericType":"T",
           "link":""
-        }
+        },
+        "isDictionary":false
       },
       "isPublic":true,
       "isStatic":false,
@@ -49,7 +51,8 @@
           "isGeneric":false,
           "genericType":"T",
           "link":""
-        }
+        },
+        "isDictionary":false
       },
       "isPublic":true,
       "isStatic":false,
@@ -65,7 +68,8 @@
           "isGeneric":false,
           "genericType":"T",
           "link":""
-        }
+        },
+        "isDictionary":false
       },
       "isPublic":true,
       "isStatic":true,
@@ -94,7 +98,8 @@
             "genericType":"T",
             "link":""
           }
-        }
+        },
+        "isDictionary":true
       },
       "isPublic":true,
       "isStatic":true,
@@ -104,6 +109,7 @@
   ],
   "constructors":[
     {
+      "name":"Core",
       "isPublic":false,
       "isStatic":false,
       "isProtected":true,
@@ -128,7 +134,8 @@
           "isGeneric":false,
           "genericType":"T",
           "link":""
-        }
+        },
+        "isDictionary":false
       }
     },
     {
@@ -148,7 +155,8 @@
               "isGeneric":false,
               "genericType":"T",
               "link":""
-            }
+            },
+            "isDictionary":false
           }
         },
         {
@@ -161,7 +169,8 @@
               "isGeneric":true,
               "genericType":"object",
               "link":""
-            }
+            },
+            "isDictionary":false
           },
           "defaultValue":null
         },
@@ -175,7 +184,8 @@
               "isGeneric":false,
               "genericType":"T",
               "link":""
-            }
+            },
+            "isDictionary":false
           },
           "defaultValue":null
         },
@@ -189,7 +199,8 @@
               "isGeneric":false,
               "genericType":"T",
               "link":""
-            }
+            },
+            "isDictionary":false
           },
           "defaultValue":true
         },
@@ -203,7 +214,8 @@
               "isGeneric":false,
               "genericType":"T",
               "link":""
-            }
+            },
+            "isDictionary":false
           },
           "defaultValue":true
         }
@@ -215,7 +227,8 @@
           "isGeneric":false,
           "genericType":"T",
           "link":""
-        }
+        },
+        "isDictionary":false
       }
     }
   ],
@@ -237,7 +250,8 @@
               "isGeneric":false,
               "genericType":"T",
               "link":""
-            }
+            },
+            "isDictionary":false
           }
         },
         {
@@ -250,7 +264,8 @@
               "isGeneric":false,
               "genericType":"T",
               "link":""
-            }
+            },
+            "isDictionary":false
           }
         },
         {
@@ -263,7 +278,8 @@
               "isGeneric":false,
               "genericType":"T",
               "link":""
-            }
+            },
+            "isDictionary":false
           }
         }
       ],
@@ -274,7 +290,8 @@
           "isGeneric":false,
           "genericType":"T",
           "link":""
-        }
+        },
+        "isDictionary":false
       }
     }
   ]

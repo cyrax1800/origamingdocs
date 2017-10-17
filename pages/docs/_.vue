@@ -13,221 +13,78 @@
         </tr>
         <tr>
           <td class="is-narrow">Inheritance</td>
-          <td>Core <span class="icon"><i class="fa fa-arrow-right" aria-hidden="true"></i></span>
-            <nuxt-link to="/docs/singleton">Singleton</nuxt-link>
+          <td v-if="preData.inheritances.length > 0">{{preData.name}} 
+            <template v-for="inheritance in preData.inheritances">
+              <span class="icon"><i class="fa fa-arrow-right" aria-hidden="true"></i></span>
+              <type-name :type="inheritance"></type-name>  
+            </template>
           </td>
+          <td v-else>-</td>
         </tr>
         <tr>
           <td class="is-narrow">Implements</td>
-          <td><nuxt-link to="/docs/IEnumerator">IEnumerator</nuxt-link></td>
+          <td v-if="preData.implements.length > 0">
+            <template v-for="implemnetType in preData.implements">
+              <type-name :type="implemnetType"></type-name>  
+              <span>; </span>
+            </template>
+          </td>
+          <td v-else>-</td>
         </tr>
       </tbody>
     </table>
-    <p>Ini adalah class utama singleton yang dipanggil</p>
+    <p>{{preData.desc}}</p>
     <br>
-    <div class="card">
-      <header class="card-header">
-        <p class="card-header-title">Constants</p>
-        <a href="#" class="card-header-icon" aria-label="more options">
-          <span class="icon"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
-        </a>
-      </header>
-      <div class="card-content is-paddingless">
-        <div class="content">
-          <table class="table is-bordered">
-            <thead>
-              <tr>
-                <th class="is-narrow">Type</th>
-                <th class="is-narrow">Name</th>
-                <th class="is-narrow">Parameter</th>
-                <th>Description</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="is-narrow">void</td>
-                <td class="is-narrow">Init</td>
-                <td class="is-narrow">
-                  <p><a>SceneId</a> scene</p>
-                  <p><a>Object</a> object</p>
-                </td>
-                <td>Function for init core class</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
 
-    <div class="card">
-      <header class="card-header">
-        <p class="card-header-title">Field / Property</p>
-        <a href="#" class="card-header-icon" aria-label="more options">
-          <span class="icon"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
-        </a>
-      </header>
-      <div class="card-content is-paddingless">
-        <div class="content">
-          <table class="table is-bordered">
-            <thead>
-              <tr>
-                <th class="is-narrow">Type</th>
-                <th class="is-narrow">Name</th>
-                <th class="is-narrow">Parameter</th>
-                <th>Description</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="is-narrow">void</td>
-                <td class="is-narrow">Init</td>
-                <td class="is-narrow">
-                  <p><a>SceneId</a> scene</p>
-                  <p><a>Object</a> object</p>
-                </td>
-                <td>Function for init core class</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
+    <property-table v-if="preData.constants.length > 0" title="Constants" :fields="preData.constants"></property-table>
+    <property-table v-if="preData.fields.length > 0" title="Field / Property" :fields="preData.fields"></property-table>
 
-    <div class="card">
-      <header class="card-header">
-        <p class="card-header-title">Constructor</p>
-        <a href="#" class="card-header-icon" aria-label="more options">
-          <span class="icon"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
-        </a>
-      </header>
-      <div class="card-content is-paddingless">
-        <div class="content">
-          <table class="table is-bordered">
-            <thead>
-              <tr>
-                <th class="is-narrow">Return Type</th>
-                <th class="is-narrow">Name</th>
-                <th class="is-narrow">Parameter</th>
-                <th>Description</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="is-narrow">void</td>
-                <td class="is-narrow">Init</td>
-                <td class="is-narrow">
-                  <p><a>SceneId</a> scene</p>
-                  <p><a>Object</a> object</p>
-                </td>
-                <td>Function for init core class</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
+    <method-table v-if="preData.constructors.length > 0" title="Constructor" :methods="preData.constructors"></method-table>    
+    <method-table v-if="preData.publicMethods.length > 0" title="Public Method" :methods="preData.publicMethods"></method-table>    
+    <method-table v-if="preData.privateMethods.length > 0" title="Private Method" :methods="preData.privateMethods"></method-table>    
 
-    <div class="card">
-      <header class="card-header">
-        <p class="card-header-title">Public Method</p>
-        <a href="#" class="card-header-icon" aria-label="more options">
-          <span class="icon"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
-        </a>
-      </header>
-      <div class="card-content is-paddingless">
-        <div class="content">
-          <table class="table is-bordered">
-            <thead>
-              <tr>
-                <th class="is-narrow">Return Type</th>
-                <th class="is-narrow">Name</th>
-                <th class="is-narrow">Parameter</th>
-                <th>Description</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="is-narrow">void</td>
-                <td class="is-narrow">Init</td>
-                <td class="is-narrow">
-                  <p><a>SceneId</a> scene</p>
-                  <p><a>Object</a> object</p>
-                </td>
-                <td>Function for init core class</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-
-    <div class="card">
-      <header class="card-header">
-        <p class="card-header-title">Private Method</p>
-        <a href="#" class="card-header-icon" aria-label="more options">
-          <span class="icon"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
-        </a>
-      </header>
-      <div class="card-content is-paddingless">
-        <div class="content">
-          <table class="table is-bordered">
-            <thead>
-              <tr>
-                <th class="is-narrow">Return Type</th>
-                <th class="is-narrow">Name</th>
-                <th class="is-narrow">Parameter</th>
-                <th>Description</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="is-narrow">void</td>
-                <td class="is-narrow">Init</td>
-                <td class="is-narrow">
-                  <p><a>SceneId</a> scene</p>
-                  <p><a>Object</a> object</p>
-                </td>
-                <td>Function for init core class</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
   </div>
 </template>
 
 <script>
-import axios from 'axios'
-export default {
-  async asyncData (context) {
-    let { data } = await axios.get(`http://localhost:3000/docs_data/` + context.params[0] + `.json`)
-    return {
-      preData: data
+  import axios from 'axios'
+  import TypeName from '~/components/TypeName.vue'
+  import PropertyTable from '~/components/PropertyTable.vue'
+  import MethodTable from '~/components/MethodTable.vue'
+
+  export default {
+    components: {
+      TypeName,
+      PropertyTable,
+      MethodTable
+    },
+    async asyncData (context) {
+      let { data } = await axios.get(`http://localhost:3000/docs_data/` + context.params[0] + `.json`)
+      return {
+        preData: data
+      }
+    },
+    mounted () {
+      this.inheritances = this.preData.inheritances
+      this.implements = this.preData.implements
+      this.constants = this.preData.constants
+      this.fields = this.preData.fields
+      this.constructors = this.preData.constructors
+      this.publicMethods = this.preData.publicMethods
+      this.privateMethods = this.preData.privateMethods
+    },
+    data () {
+      return {
+        inheritances: [],
+        implements: [],
+        constants: [],
+        fields: [],
+        constructors: [],
+        publicMethods: [],
+        privateMethods: []
+      }
+    },
+    methods: {
     }
-  },
-  mounted () {
-    this.inheritances = this.preData.inheritances
-    this.implements = this.preData.implements
-    this.constants = this.preData.constants
-    this.fields = this.preData.fields
-    this.constructors = this.preData.constructors
-    this.publicMethods = this.preData.publicMethods
-    this.privateMethods = this.preData.privateMethods
-  },
-  data () {
-    return {
-      inheritances: [],
-      implements: [],
-      constants: [],
-      fields: [],
-      constructors: [],
-      publicMethods: [],
-      privateMethods: []
-    }
-  },
-  methods: {
-    // formatGenericClass
   }
-}
 </script>
